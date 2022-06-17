@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  web:
+    build: ./web
+    ports: 
+      - 8080:80
+  workstation:
+    build: ./ws
+    stdin_open: true
+    tty: true 
+    depends_on:
+      - web
